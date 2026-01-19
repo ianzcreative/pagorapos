@@ -4,7 +4,7 @@ Welcome to the official documentation for **Pagora POS**, a high-performance, de
 
 ---
 
-![Image 1](https://creator.ianstudios.id/storage/docs-images/01KFA9ZT2PAVZQ0V4QGSXA4P7X.jpg)
+![Image 1](https://creator.ianstudios.id/storage/docs-images/01KFAYNCRGRPV8PEFE6EWJXFCD.jpg)
 
 ![Image 2](https://creator.ianstudios.id/storage/docs-images/01KFA76BD0WRDSYERDT9PH2B1P.jpg)
 
