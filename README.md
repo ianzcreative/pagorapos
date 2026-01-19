@@ -125,6 +125,51 @@ public function panel(Panel $panel): Panel
 }
 ```
 
+## User Model Configuration
+
+To enable API access (required for the POS Terminal and data synchronization), you must add the `HasApiTokens` trait to your `User` model.
+
+Ensure that **Laravel Sanctum** is installed, then open your `app/Models/User.php` file:
+
+```php
+<?php
+
+namespace App\Models;
+
+// 1. Import the Sanctum Trait
+use Laravel\Sanctum\HasApiTokens; // [!code ++]
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    // 2. Add the trait to the class
+    use HasApiTokens, Notifiable; // [!code ++]
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    // ...
+}
+```
+
+Note: If you are using a custom model, you can configure your User model class in `config/pagorapos.php`
+
+Note: If you haven't installed Sanctum yet, please run: 
+
+```bash
+composer require laravel/sanctum
+
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+```
 ---
 
 ## 3. Customization & Store Logic
@@ -226,16 +271,7 @@ At the end of a shift, the cashier performs a **Closing Session**:
 
 ---
 
-## 🚀 Experience the Live Demo
-
-See how everything works in a real-world scenario — fast, intuitive, and built to scale for professional use as well as experimentation.
-
-👉 **Access the demo here:**  
-🔗 https://v3.ianstudios.id/
-
-Don’t just read the documentation — **explore the interface, test the flow, and experience the performance firsthand**.
-
-## License & Terms
+## 8. License & Terms
 
 PagoraPOS is started from **Single License (€99)** as perpetual license.
 
