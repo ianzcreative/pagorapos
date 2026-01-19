@@ -224,7 +224,16 @@ At the end of a shift, the cashier performs a **Closing Session**:
 
 ---
 
-## 8. License & Terms
+## 🚀 Experience the Live Demo
+
+See how everything works in a real-world scenario — fast, intuitive, and built to scale for professional use as well as experimentation.
+
+👉 **Access the demo here:**  
+🔗 https://v3.ianstudios.id/
+
+Don’t just read the documentation — **explore the interface, test the flow, and experience the performance firsthand**.
+
+## License & Terms
 
 PagoraPOS is started from **Single License (€99)** as perpetual license.
 
