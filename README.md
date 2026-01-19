@@ -1,3 +1,5 @@
+# PagoraPOS - The Ultimate Point-of-Sale Plugin
+
 Welcome to the official documentation for **Pagora POS**, a high-performance, developer-first Point of Sale plugin solution. This package is designed to integrate seamlessly into your existing Laravel ecosystem using Filament v3, providing a robust architecture for retail, inventory, and global tax compliance.
 
 ---
