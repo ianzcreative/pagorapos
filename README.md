@@ -137,14 +137,14 @@ Ensure that **Laravel Sanctum** is installed, then open your `app/Models/User.ph
 namespace App\Models;
 
 // 1. Import the Sanctum Trait
-use Laravel\Sanctum\HasApiTokens; // [!code ++]
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
     // 2. Add the trait to the class
-    use HasApiTokens, Notifiable; // [!code ++]
+    use HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
