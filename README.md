@@ -32,10 +32,10 @@ Since Pagora POS is distributed via a private repository, you must first registe
 
 ```json
 "repositories": [
-		{
-				"type": "composer",
-				"url": "https://pagorapos.creator.ianstudios.id"
-		}
+	{
+			"type": "composer",
+			"url": "https://pagorapos.creator.ianstudios.id"
+	}
 ]
 ```
 
@@ -65,14 +65,14 @@ php artisan pagorapos:install
 
 ### E. Asset & Configuration Deployment
 
-Pagora POS requires specific assets and configurations to be published to your host application:
+Pagora POS requires specific assets and configurations to be published to your host application (if yet already):
 
 ```bash
 # Publish core configuration
 php artisan vendor:publish --tag=pagorapos-config
 
 # Publish assets
-php artisan vendor:publish --tag=pagorapos-assets
+php artisan vendor:publish --tag=pagorapos-sounds
 
 # Publish localization files
 php artisan vendor:publish --tag=pagorapos-translations
@@ -170,6 +170,22 @@ composer require laravel/sanctum
 
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 ```
+
+## 📝 Setup Activity Log
+
+**Wanna use audit or activity logs? publish spatie** migrations first to create the necessary tables in your database.
+
+Run the following command in your terminal:
+
+```bash
+php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-migrations"
+```
+Once the migration file is published, run the migration to create the activity_log table:
+
+```bash
+php artisan migrate
+```
+
 ---
 
 ## 3. Customization & Store Logic
@@ -271,7 +287,25 @@ At the end of a shift, the cashier performs a **Closing Session**:
 
 ---
 
-## 8. License & Terms
+## 8. Printer ESC/POS Support
+
+*update to version 1.2.5*
+
+Pagora POS now supports direct printing to thermal printers using the ESC/POS protocol, bypassing standard browser print dialogs for faster checkout.
+
+### 🖨️ Connectivity Options
+
+* **Network (LAN/WiFi):** Connect directly to printers sharing the same network via IP Address (Port 9100).
+* **USB & Bluetooth:** Supports printing via local device paths (e.g., `/dev/usb/lp0` on Linux or Shared Printers on Windows).
+
+### ⚡ Instant Printing
+
+* **Direct Printing:** Receipts print instantly without opening a PDF or browser popup.
+* **Native Formatting:** Receipts are formatted using raw ESC/POS commands (Bold, Center, Double Width) for a professional, sharp look regardless of the browser or device used.
+
+---
+
+## 9. License & Terms
 
 PagoraPOS is started from **Single License (€99)** as perpetual license.
 
