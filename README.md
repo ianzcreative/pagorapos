@@ -7,11 +7,11 @@ Welcome to the official documentation for **Pagora POS**, a high-performance, de
 
 ---
 
-## 1. Product Overview & Core Features
+## 🚀 Product Overview & Core Features
 
 Pagora POS is not just a plugin; it is a **Modular Monolith** engine designed to handle the complexities of modern retail.
 
-### 🚀 Key Features
+### Key Features
 
 * **High-Speed Terminal:** A reactive, Alpine.js-powered terminal for instant transactions.
 * **Nexus Tax Engine:** Sophisticated tax calculation logic supporting VAT (Europe), Sales Tax (US), and custom regional Nexus rules.
